@@ -31,6 +31,9 @@
       }
         #navbar{
             border-right: 2px solid grey;
+            border-top:none;
+            border-bottom:none;
+            height:100%;
         }
         ul{
           flex-direction:column;
@@ -46,25 +49,73 @@
             <section class="main-section">
                 <h3 id="Introduction"> Introduction </h3> 
                     <p>
+                       In this article, we will go over some of the highlights of Float, Flex, and Grid.
+                        In the simplest terms, these three HTML/CSS features are used to organize the elements on our Webpage.
+                        As we will see in the following paragraph, some of these features are more efficient in certain situations
+                        than others.<br>
+                            <h4>What you will need.</h4>
+                                <ul id="paragraph-lists">
+                                    <li class="pli">A basic understanding of html.</li>
+                                    <li class="pli">A basic understanding of css.</li>
+                                </ul>
+                
                     </p>  
         
             </section> 
             <section class="main-section">
                 <h3 id="Best_is_Relative"> Best is relative </h3> 
                     <p>
-                    </p>  
+                        Depending on the layout you are trying to achieve, using one of these features may be more efficient than another. 
+                        Each of these features has drawbacks that should serve to prevent you from using it in certain situations.
+                        This does not only apply to how these features affect webpage elements, but also in how easy/difficult they 
+                        are to set up in the first place. Grid, as we will see, allows us to divide the elements of our webpage in two-dimensions,
+                        meaning the feature can be implemented to affect both the columns and rows of a given container.
+                        This might not be necessary in a situation where we only want to affect container elements according 
+                        to their position along either an x or a y axis. In a situation such as this, flex might be a better decision,
+                        as it is typically less time-consuming to set up than grid, but will get the job done nonetheless. An argument
+                        could be made that floats are even less difficult to set up than flex, and also require less forethought before
+                        implementing. This may come at the expense of more specific control of your webpage elements further on, and 
+                        so it is entirely relative to your situation. I encourage you to keep that in mind as you continue reading this article.
+                        </p>  
         
             </section>
             <section class="main-section">
                 <h3 id="Floats"> Floats </h3> 
                     <p>
-                    </p>  
-        
+                        The Float property was originally introduced to move block-level elements around a page more easily. As it is the oldest
+                        of the features in this article, it may come as no surprise that it offers the least amount of control over webpage elements, especially
+                        in relation to one another. 
+                        <br><br>
+                        Float, in its simplest terms, allows us to move block-level elements to either the right or the left in our webpage. This allows other content
+                        to wrap around these block-level elements, which can be used to very easily create a sense of cohesion to our webpages. Before the option to float existed,
+                        this could only be achieved by very specifically setting margins and padding to fixed block-elements. This, as I can only imagine, must have been very 
+                        time-consuming.
+                    </p>
+
             </section>
             <section class="main-section">
                 <h3 id="Float_Examples"> Float Examples </h3> 
                     <p>
-                    </p>  
+                        Because we have less control over multiple elements simultaneously using floats, there is less syntax involved in implementing float to block-level elements.
+                        First we apply the following to a given element.
+                           <pre class="code"><code> display:block;</code></pre>
+                    </p>
+                    <p>     
+                        Once we set the display of the element in question to block, we can then use float to shift it over to the right or left side of our webpage by using one of the following options:
+                    </p>
+                        <pre class="code"><code> float:left;</code></pre>
+                        <pre class="code"><code> float:right;</code></pre>
+                    
+                    <p>
+                        <b>NOTE</b> certain elements in html are automatically considered block-level elements. Paragraphs, headers, and forms are just a few of the long-list of elements that are inherently 
+                        block-level. When floating one of these items, you do not have to set the display to block as it is already considered block-level. 
+                        
+                        <h4>For lists of Block and Inline html elements, click on the items below</h4>
+                            <ul id="paragraph-lists">
+                                <li class="pli"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements" target="_blank"> <u> Block-Level Elements</u> </a></li>
+                                <li class="pli"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank"><u> Inline Elements </u></a></li>
+                            </ul>
+                    </p>
         
             </section> 
             <section class="main-section">

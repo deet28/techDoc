@@ -1,5 +1,5 @@
 body{
-    max-width:90vw; !important; 
+    /*max-width:90vw !important;*/
 }
 
 #main-doc{
@@ -11,11 +11,14 @@ body{
   }
   #navbar{
     display:flex;
+    height: 200px;
     justify-content: flex-start;
     align-items: flex-start;
     border-top:2px solid grey;
     border-bottom: 2px solid grey;
     text-align: left;
+    overflow: hidden;
+    overflow-y: scroll;
   }
   
   ul {
@@ -31,7 +34,7 @@ body{
     justify-self: start;
     box-sizing: border-box;
     border-bottom: 1px solid gray;
-    padding:.5rem; 
+    padding:1rem; 
    font-weight: 700;
     text-align: left;
   }
@@ -39,23 +42,48 @@ body{
       border-bottom: none !important;
   }
   li:hover{
-      cursor: pointer;
       text-decoration: none;
+      
   }
   a:link{
       text-decoration: none;
       color:black;
+  }
+  a:hover{
+    font-size: larger;  
   }
 
   a:visited{
       text-decoration: none;
       color:black;
   }
-
   .wrapper{
-      max-width:80%;
+      max-width:100%;
       display:flex;
       flex-direction: column;
-      align-items: center;
+      margin-left:2rem;
+      align-items: left;
+  }
 
+  h3{
+      text-decoration: underline;
+      text-transform: uppercase;
+  }
+  h4{
+      text-indent: 1em;
+  }
+
+  #paragraph-lists{
+      text-indent: 2em;
+  }
+  .pli{
+      border: none;
+      font-weight: 100;
+  }
+  p{
+      line-height: 1.75rem;
+  }
+  .code{
+      text-indent: 2em;
+      line-height: 1.75rem;
   }
