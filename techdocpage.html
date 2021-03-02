@@ -121,43 +121,159 @@
             <section class="main-section">
                 <h3 id="Flex"> Flex </h3> 
                     <p>
-                        Flexbox is as a one-dimensional display module. In this case, one dimensional means that it affects all elements along either a row or a column.  Although Flexbox can do either direction, it does not 
-                        do both directions in the same instance. Flexbox offers control over multiple html elements simultaneously. It functions in a parent-child relationship, with the container element being designated as the parent element, 
+                        Flexbox is as a one-dimensional display module. In this case, one dimensional means that it affects all elements along either a row or a column.  Although Flexbox can affect elements in either direction, it offers more control
+                        over the elements that are displayed along the 'main axis'. Flexbox offers control over multiple html elements simultaneously. It functions in a parent-child relationship, with the container element being designated as the parent element, 
                         and all items within that container element as child elements. Flexbox allows for quick and easy webpage organization. Using syntax that we will see below, Flexbox is able to move multiple child elements in a certain
-                        direction together, and also space each of these child items evenly along an axis. 
+                        direction together, and also space each of these child items evenly along an axis. Flex also offers control over the cross-axis as well, (cross axis and main axis are terms we will visit in subsequent sections). 
                     </p> 
-                        <br>
+                    
                     <p>
                         In order to initiate Flexbox on a group of items, we must first assign the role of parent to an individual element. In order to do this, we use the following syntax on a block item that holds other items within it.
                         <pre class="code"><code> display:flex </code></pre>
                     </p>
                     <p>
-                        All items within this parent element are now modified according to the specifications we make within this parernt element. First we decide whether the child elements will be displayed in rows or columns. By default,
+                        All items within this parent element are now modified according to the specifications we make within this parent element. First we decide whether the child elements will be displayed in rows or columns. By default,
                         flex items are displayed in rows, so just initializing flex will serve to organize child elements along the x-axis. If we would prefer the items to be positioned vertically we can achieve this by entering the following syntax
                         in our flex-container.
                         <pre class="code"><code> display:flex; </code></pre> 
                         <pre class="code"><code> flex-direction:column;</code></pre>
                     </p>
+                    <p>
+                        After we've decided whether our flexed child-elements will be displayed in a row or column, we can further manipulate there layout in terms of there location, spacing, and even the order in which they are displayed.  We will 
+                        cover some of this in the next section. 
+                    </p>
             </section>
             <section class="main-section">
                 <h3 id="Flex_Examples"> Flex Examples </h3> 
+                    
+                        <h4>Justify Content</h4>
                     <p>
-                        After we've decided whether our flexed child-elements will be displayed in a row or column, we can further manipulate there layout in terms of there spacing and even the order in which they are displayed. 
-                        Flex
-                    </p>  
-        
+                        Justify Content allows us to select how all of our container elements are displayed along the main axis. Here, the main axis depends on the direction of our container items. If our container items are set to row, (which we saw earlier), then the 'main 
+                        axis' will be the x-axis. And if our container elements are set to column, the main axis will be the y-axis.
+                        
+                        Some common syntax for affecting our flex items along the main axis are demonstrated below.   
+                    </p>
+                        <pre> <code> justify-content:flex start; </code> </pre> 
+                        <pre> <code> justify-content:flex-end; </code> </pre> 
+                        <pre> <code> justify-content:center; </code> </pre> 
+                        
+                    <p>
+                        Using justify content like it is demonstrated above will move all flex items within that container to the beginning of the main axis, the end of the main axis, or to the center of the main axis respectively. Two other common ways to affect our items along the main axis include: 
+                    </p>
+                        <pre> <code> justify-content:space-between; </code> </pre>
+                        <pre> <code> justify-content:space-around; </code> </pre>
+                    <p>
+                        Both space-between and space-around evenly space our items along the entirety of the main axis. The only difference between the two is that space-around will leave an additional space in between the outer most element and its closest margin along the main axis.
+                    </p>
+                    <hr>
+                    <h4>Align Items</h4>
+                    <p>
+                        While justify-content affects our container items along the container's main-axis, align-items affects the location of our container items along the cross-axis. Here, the cross-axis is whichever axis is perpendicular to our main-axis. So, for flex containers that use the x-axis as the main axis, the cross-axis will be the y-axis (and vice versa).
+                        <br>
+                        Some common syntax for moving our container items along the cross-axis is written below: 
+                    </p>
+                        <pre> <code> align-items:flex-start; </code> </pre> 
+                        <pre> <code> align-items:flex-end; </code> </pre>
+                    <p>
+                        Aligning our items will move all of them to either the beginning or the end of whatever our cross-axis is. So, for items whose main-axis is the x-axis, aligning them with "flex-start" will move them all to the top of the container.  The same is true for flex-end, with the probably obvious exception that it pushes these items toward the end of the cross-axis.
+                        Another option that we have to affect our items along the cross axis is written below:
+                    </p>
+                        <pre> <code> align-items:stretch; </code> </pre>  
+                    <p>
+                        This will stretch the items so they take up all of the space of the cross-axis. <b>NOTE</b> this will only work if we set the height of the container item in question to 'auto.'
+                    </p>
+                    <h4>Align Self</h4>
+                    <p>
+                        Align-Self allows us to make the same changes that we can make using align-items but to individual container elements instead of all container elements at once. This serves to further increase our control over the display, as we don't have to set all of our container items in the same way along the cross-axis. The following can be used on any item within a flex-container.
+                    </p>
+                        <pre> <code> align-self:stretch </code> </pre>
+                    <p>
+                        This will stretch the item in question to take up the entire cross-axis without affecting any of the other flex-container elements. Align-self will work with any of the syntax that can be assigned to align-items.
+                    </p>   
+                    <h4>Flex-Wrap</h4>   
+                    <p>
+                        The last flex attribute we will be looking at is called Flex-Wrap. By default, flex automatically fits all of its container elements within one line along the main-axis. In order to change this, we can add the following to our flex container.
+                    </p> 
+                        <pre> <code> flex-wrap:wrap; </code> </pre>
+                    <p>
+                        Items within our flex container will now "wrap" around to the next main-axis line when they run out of room. We can also set the following to wrap our items in reverse order.
+                    </p>
+                        <pre> <code> flex-wrap:wrap-reverse; </code> </pre>
+                    <p>
+                        These are only the most frequently used flex-container attributes. There are more however, and I will link a site that goes into more detail <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"target= "_blank"> <b>here.</b></a>
+                    </p>    
+
             </section>
             <section class="main-section">
                 <h3 id="Grid"> Grid </h3> 
                     <p>
+                        Grid was introduced sometime after Flex as an alternative for displaying items on our webpage. Grid is more 2-dimensional than flex, as we can specifically place all elements within our container element on both the x and y axis. This offers more precision than Flex, 
+                        but it comes at the expense of taking bit of extra time to set it up. Like flex, grid is a parent-child display module, so we first set a div container as the parent element, and then we can affect all elements within that parent element, which are referred to as child-items.
+                        We initiate Grid exactly like we initiate Flex but with different syntax. First, we apply the following to the container element which will serve as our parent-element.
                     </p>  
+                        <pre> <code> display:grid </pre> </code>
+                    <p>
+                        All child elements within this parent element can now be affected using grid, which is something that we will see in more detail in the next section.
+                    </p>
         
             </section>
             <section class="main-section">
                 <h3 id="Grid_Examples"> Grid Examples </h3> 
+                <h4>Assigning Columns and Rows</h4>
                     <p>
+                        Grid offers even more control than flex in its ability to position elements along the webpage. This is because Grid allows us to specifically place items according to their x and y position, where flex offers less initial precision. Like we mentioned earlier, we initialize grid by adding 'display:grid' to a parent-element. 
+                        After this, we can immediately designate the size of our grid. We do this by specifying the amount of columns we want our grid to be divided into, and also the size of each individual column. This is achieved by entering the following syntax, which is just an example as we'll see.  
                     </p>  
-        
+                        <pre> <code> display:grid </pre> </code>
+                        <pre> <code> grid-template-columns: 1fr, 2fr; </pre> </code>
+                    <p>
+                        In the example above our grid has two columns. One of these columns is 1fr (fractional size unit in html), and the other is 2fr. This demonstrates how grid-columns are created; with the first amount being the size of our first column, and the size of each subsequent column being the following amounts. 
+                        Grid will therefore be as many columns as there are values following the "grid-template-columns" syntax, as each of these values is the size of a certain column. As you might be able to see already, we can very specifically designate the size of our space. We are not limited to size units either. 
+                        We can designate the size of our columns by using any html measurement units (fr, px, % etc).  And these can even differ among the same grid template as is indicated in the following example. 
+                    </p> 
+                        <pre> <code> display:grid; </code> </pre>
+                        <pre> <code> grid-template-columns: 1fr, 25px, 40%; </pre> </code>   
+                    <p>
+                        In this example we have created three different columns using three different units of measurement, allowing us full control when deciding on the size of our grid items. The same thing applies if we want to establish the size of the rows in our grid. The only exception is that where we used 'grid-template-columns' for columns, we will use 'grid-template-rows' for rows. 
+                        An example set up where we have designated the size of our grid columns and rows can be seen below.
+                    </p>   
+                        <pre> <code> display:grid; </pre> </code>
+                        <pre> <code>grid-template-columns: 1fr, 2fr; </pre> </code>
+                        <pre> <code>grid-template-rows: 1fr, 2fr, 2fr, 1fr;  </pre> </code>
+                    <p>
+                        Here, we have decided that our grid is going to take up two columns and  four rows, and the size of each of these is written as fractions of the entire webpage page (fr).  From here we can start deciding how to place all of our items within the rows and columns that we have created.  
+                    </p> 
+                        <hr>  
+                <h4>Grid Columns and Rows</h4> 
+                    <p>
+                        After we've dictated the amount of columns (and maybe rows) within our grid container, we can start organizing the items within. There are two ways we can do this. The first we will go over, is achieved simply by writing a grid-item's column and row location. We can do this using the syntax in the following example.
+                    </p>
+                        <pre> <code> example-item{grid-column: 1/3;grid-row: 1/4;}  </code> </pre>
+                    <p>
+                        This means that the item in question will start against the line of the first column and end against the last line of the second column. And this item will start against the first line of the first row and end against the last line of the third row. The above example would fit within a grid that has two columns and three rows, despite the second two numbers in both instances initially appearing to be one number higher than this amount. 
+                        This is because the final line in our grid-template specifications is the outermost line of the grid, so in this example line four refers to the bottom line of the bottom row.
+                    </p>
+                    <br>
+                <h4>Grid Template Areas</h4>
+                    <p>
+                        Grid-template-areas allows us to dictate which child elements will go where within our grid parent container. We organize our grid by naming which item will go in which area, and then labeling our corresponding grid items appropriately (as we will see below). Below is an example of grid-template-areas in action.
+                    </p>   
+                        <pre> <code>display:grid </pre> </code>
+                        <pre> <code>grid-template-columns:1fr, 2fr</pre> </code>
+                        <pre> <code>grid-template-areas:" item-a item-a"
+                      "item-b item-c"
+                      "item-d item-d"; </pre> </code>
+                    <p>
+                        And after this, we specify which grid item is in which grid area using the following: 
+                    </p> 
+                        <pre> <code> .grid-example-item {grid-area:"item-a";}
+                        </code> </pre> 
+                    <p>
+                        As we can see in the example above, we established how many columns will be in our grid, and also which of our grid items would go where within our grid. We then add grid-area to items that we want to place within our grid. These items don't have to be in order within the html either, as simply dictating an item's grid-area will place it according to the parent's grid-template-area specifications.
+                    </p>     
+
+                    
+                        
             </section>
             <section class="main-section">
                 <h3 id="Flex_with_Grid"> Flex with Grid </h3> 
