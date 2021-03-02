@@ -11,16 +11,17 @@
     
     <nav id="navbar">
       <ul>
-        <li><a href="#Introduction"> Introduction </a></li>
-        <li><a href="#Best_is_Relative"> Best is Relative </a></li>
-        <li><a href="#Floats"> Floats </a></li>
-        <li><a href="#Float_Examples"> Float Examples </a></li>
-        <li><a href="#Flex"> Flex </a></li>
-        <li><a href="#Flex_Examples"> Flex Examples </a></li>
-        <li><a href="#Grid"> Grid </a></li>
-        <li><a href="#Grid_Examples"> Grid Examples </a></li>
-        <li><a href="#Flex_with_Grid"> Flex with Grid </a></li>
-        <li class="last-list"><a href="#Wrapping_Up"> Wrapping Up </a></li>  
+        <li class="list-header"><header>Float Flex Grid</header></li>  
+        <li><a class="nav-link" href="#Introduction"> Introduction </a></li>
+        <li><a class="nav-link" href="#Best_is_Relative"> Best is Relative </a></li>
+        <li><a class="nav-link" href="#Floats"> Floats </a></li>
+        <li><a class="nav-link" href="#Float_Examples"> Float Examples </a></li>
+        <li><a class="nav-link" href="#Flex"> Flex </a></li>
+        <li><a class="nav-link" href="#Flex_Examples"> Flex Examples </a></li>
+        <li><a class="nav-link" href="#Grid"> Grid </a></li>
+        <li><a class="nav-link" href="#Grid_Examples"> Grid Examples </a></li>
+        <li><a class="nav-link" href="#Flex_with_Grid"> Flex with Grid </a></li>
+        <li id="last-list"><a class="nav-link" href="#Wrapping_Up"> Wrapping Up </a></li>  
       </ul> 
     </nav>  
     
@@ -28,26 +29,34 @@
       @media (min-width:900px){
         #main-doc{
           grid-template-columns: 1fr 2fr;
-      }
+         
+        } 
         #navbar{
             border-right: 2px solid grey;
-            border-top:none;
+            top:0;
             border-bottom:none;
-            height:100%;
+            height:100%; 
+            overflow-x: hidden;
+            overflow-y: scroll;
+            position:fixed;
         }
         ul{
           flex-direction:column;
           justify-content: space-around;
-          height:95%; 
-          
-        }
+          text-align: center;
+          height:100%;
+          overflow-y: scroll;
+         }
+         .wrapper{
+             grid-column: 2/ 4;
+         }
     
     }  
       
     </style>
       <div class="wrapper">
-            <section class="main-section">
-                <h3 id="Introduction"> Introduction </h3> 
+            <section class="main-section"id="Introduction">
+                <header>Introduction</header> 
                     <p>
                        In this article, we will go over some of the highlights of Float, Flex, and Grid.
                         In the simplest terms, these three HTML/CSS features are used to organize the elements on our Webpage.
@@ -62,8 +71,8 @@
                     </p>  
         
             </section> 
-            <section class="main-section">
-                <h3 id="Best_is_Relative"> Best is relative </h3> 
+            <section class="main-section"id="Best_is_Relative">
+                <header>Best is relative</header> 
                     <p>
                         Depending on the layout you are trying to achieve, using one of these features may be more efficient than another. 
                         Each of these features has drawbacks that should serve to prevent you from using it in certain situations.
@@ -79,8 +88,8 @@
                         </p>  
         
             </section>
-            <section class="main-section">
-                <h3 id="Floats"> Floats </h3> 
+            <section class="main-section"id="Floats">
+                <header>Floats</header> 
                     <p>
                         The Float property was originally introduced to move block-level elements around a page more easily. As it is the oldest
                         of the features in this article, it may come as no surprise that it offers the least amount of control over webpage elements, especially
@@ -93,8 +102,8 @@
                     </p>
 
             </section>
-            <section class="main-section">
-                <h3 id="Float_Examples"> Float Examples </h3> 
+            <section class="main-section"id="Float_Examples">
+                <header>Float Examples</header> 
                     <p>
                         Because we have less control over multiple elements simultaneously using floats, there is less syntax involved in implementing float to block-level elements.
                         First we apply the following to a given element.
@@ -118,8 +127,8 @@
                     </p>
         
             </section> 
-            <section class="main-section">
-                <h3 id="Flex"> Flex </h3> 
+            <section class="main-section"id="Flex">
+                <header>Flex</header> 
                     <p>
                         Flexbox is as a one-dimensional display module. In this case, one dimensional means that it affects all elements along either a row or a column.  Although Flexbox can affect elements in either direction, it offers more control
                         over the elements that are displayed along the 'main axis'. Flexbox offers control over multiple html elements simultaneously. It functions in a parent-child relationship, with the container element being designated as the parent element, 
@@ -143,8 +152,8 @@
                         cover some of this in the next section. 
                     </p>
             </section>
-            <section class="main-section">
-                <h3 id="Flex_Examples"> Flex Examples </h3> 
+            <section class="main-section"id="Flex_Examples">
+                <header>Flex Examples</header> 
                     
                         <h4>Justify Content</h4>
                     <p>
@@ -204,8 +213,8 @@
                     </p>    
 
             </section>
-            <section class="main-section">
-                <h3 id="Grid"> Grid </h3> 
+            <section class="main-section"id="Grid">
+                <header>Grid</header> 
                     <p>
                         Grid was introduced sometime after Flex as an alternative for displaying items on our webpage. Grid is more 2-dimensional than flex, as we can specifically place all elements within our container element on both the x and y axis. This offers more precision than Flex, 
                         but it comes at the expense of taking bit of extra time to set it up. Like flex, grid is a parent-child display module, so we first set a div container as the parent element, and then we can affect all elements within that parent element, which are referred to as child-items.
@@ -217,8 +226,8 @@
                     </p>
         
             </section>
-            <section class="main-section">
-                <h3 id="Grid_Examples"> Grid Examples </h3> 
+            <section class="main-section"id="Grid_Examples">
+                <header>Grid Examples</header> 
                 <h4>Assigning Columns and Rows</h4>
                     <p>
                         Grid offers even more control than flex in its ability to position elements along the webpage. This is because Grid allows us to specifically place items according to their x and y position, where flex offers less initial precision. Like we mentioned earlier, we initialize grid by adding 'display:grid' to a parent-element. 
@@ -301,8 +310,8 @@
                     </p>
                         
             </section>
-            <section class="main-section">
-                <h3 id="Flex_with_Grid"> Flex with Grid </h3> 
+            <section class="main-section"id="Flex_with_Grid">
+                <header>Flex with Grid</header> 
                     <p>
                         Grid and Flex both offer massive control over the layout of our webpage individually. Both of these modules allow us to affect the position of our elements along both the x and the y axis (although with flex having more control over one axis than another). In certain situations, setting up grid may not be worth the effort, especially for 
                         simpler tasks that do not require much forethought. It is as easy as setting an element to flex, and simply dictating where all of these elements will be positioned. No adding areas to items, and taking the time to designate space for these items as we saw with grid. In other situations, grid shines with its precision. Perhaps we can be in 
@@ -312,8 +321,8 @@
                     </p>  
         
             </section>
-            <section class="main-section">
-                <h3 id="Wrapping_Up"> Wrapping Up </h3> 
+            <section class="main-section"id="Wrapping_Up">
+                <header>Wrapping Up</header> 
                     <p>
                         We briefly went over some of the most popular methods for positioning items within ourr html. These methods, as we have mentioned earlier, might be more well equipped for certain situations than others. As such, you should use your best discretion when picking which one to implement in a given situation. Remember you are not limited to using just 
                         one of these modules or methods for moving the content on screen. You might even have more control by using different ones together. Try it out for yourself!
