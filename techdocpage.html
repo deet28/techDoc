@@ -112,8 +112,8 @@
                         
                         <h4>For lists of Block and Inline html elements, click on the items below</h4>
                             <ul id="paragraph-lists">
-                                <li class="pli"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements" target="_blank"> <u> Block-Level Elements</u> </a></li>
-                                <li class="pli"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank"><u> Inline Elements </u></a></li>
+                                <li class="pli"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements" target="_blank"> <u> <b>Block-Level Elements</u></b> </a></li>
+                                <li class="pli"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank"><u><b>Inline Elements</b></u></a></li>
                             </ul>
                     </p>
         
@@ -264,26 +264,59 @@
                       "item-b item-c"
                       "item-d item-d"; </pre> </code>
                     <p>
-                        And after this, we specify which grid item is in which grid area using the following: 
+                        And after this, we specify which grid item is in which grid area using the following syntax: 
                     </p> 
                         <pre> <code> .grid-example-item {grid-area:"item-a";}
                         </code> </pre> 
                     <p>
-                        As we can see in the example above, we established how many columns will be in our grid, and also which of our grid items would go where within our grid. We then add grid-area to items that we want to place within our grid. These items don't have to be in order within the html either, as simply dictating an item's grid-area will place it according to the parent's grid-template-area specifications.
-                    </p>     
+                        As we can see in the example above, we established how many columns will be in our grid, and also which of our grid items will go where within our grid. We then add grid-area to items in our grid, and set the grid-area to match the name of the 'grid-template-area' we want our item to be displayed in. In the example above, item-a will take up the entire first row of the grid, with subsequent items labeled 'item-b' and 'item-c' taking up the second row,
+                        and 'item-c' taking up the entire bottom row. These items don't have to be in order in our html either, as simply dictating an item's grid-area will place it according to the parent's grid-template-area specifications. This has a lot of benefits, one of which being easier media queries. Media queries give us the ability to dictate changes to our webpage based on the size of the screen that is viewing it. Since we can easily write our grid-template-areas
+                        in one list in our parent element, and these areas will determine the order and position of our grid elements, we don't have to keep rewriting a ton ofcode to fit our webpage to different screen sizes. All we have to do is create a new grid-template-area in our media query, and our grid items will move in response to it.
 
-                    
+                        <br> <br> 
+                        <b>Note</b> Media queries allow us to create more responsive webpages. For more information about media queries, click <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"><b><u>here.</u></b></a>
+                    </p>
+                    <h4>Justify Items and Align Items </h4> 
+                    <p>
+                        Just like we saw in an earlier section about flex, we can move our grid items together using certain syntax on our grid parent element. This is slightly different than flex, however, as we are moving the content within our already established grid containers. The first two we will look at are wrritten as follows. 
+                    </p>    
+                    <pre><code> display:grid; </code></pre>
+                    <pre><code> justify-items:center;</code></pre>
+                    <pre><code> align-items:center;</code></pre>
+                    <p>
+                        Justify-items aligns the items along the x-axis or the row, whereas align-items aligns items along the y-axis or the column. In the above example we used center which would push all grid items to the center of their respective cell. They both take values start, end, center, and stretch which move the items to the beginning, end, center, or 
+                        make the items stretch the length of their containers respectively. 
+                    </p>
+                        <br>
+                    <p>
+                        This is just barely scratching the surface of the vast capabilites of grid containers. Below is a short list of some syntax that we haven't covered, and also a link to a more immersive dive into grid. 
+                    </p>
+                        <ul id="paragraph-lists">
+                            <li class="pli"><u>Justify-Content</u> to position the entirety of grid elements within the overrall grid container along the x axis.</li>
+                            <li class="pli"><u>Align-Content</u> to position the entirety of grid elements within the overrall grid container along the y axis. </li>
+                            <li class="pli"><u>Grid-Gap</u> to create even lines between all of our grid cells.</li>
+                        </ul>
+                    <p>
+                        <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-justify-content"><b><u>Here</b></u></a> is a list that goes in to much greater detail about grid.
+                    </p>
                         
             </section>
             <section class="main-section">
                 <h3 id="Flex_with_Grid"> Flex with Grid </h3> 
                     <p>
+                        Grid and Flex both offer massive control over the layout of our webpage individually. Both of these modules allow us to affect the position of our elements along both the x and the y axis (although with flex having more control over one axis than another). In certain situations, setting up grid may not be worth the effort, especially for 
+                        simpler tasks that do not require much forethought. It is as easy as setting an element to flex, and simply dictating where all of these elements will be positioned. No adding areas to items, and taking the time to designate space for these items as we saw with grid. In other situations, grid shines with its precision. Perhaps we can be in 
+                        most control of our layout while using the two together. Grid is typically good for media queries, as we discussed briefly earlier. It is a good fit when it comes to organizing a full structure, with its ability to very precisely place all elements within it. Some of these elements can be flex containers. Since flex shines in areas that do not 
+                        require full control, that need quick and easy values to dial in. Placing flex within grid gives us the best of both worlds, streamlining our ability to set up smaller items in flex containers, and placing those flex containers exactly within our larger and more precise grid container. Of course this is just an opinion. Try them out for yourself
+                        and see how you can use them best. 
                     </p>  
         
             </section>
             <section class="main-section">
                 <h3 id="Wrapping_Up"> Wrapping Up </h3> 
                     <p>
+                        We briefly went over some of the most popular methods for positioning items within ourr html. These methods, as we have mentioned earlier, might be more well equipped for certain situations than others. As such, you should use your best discretion when picking which one to implement in a given situation. Remember you are not limited to using just 
+                        one of these modules or methods for moving the content on screen. You might even have more control by using different ones together. Try it out for yourself!
                     </p>  
         
             </section>                  
